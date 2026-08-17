@@ -384,6 +384,43 @@ body {
   animation: beat 1.4s ease-in-out infinite;
 }
 
+.gallery-card {
+  width: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 12px 14px;
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  box-shadow: var(--shadow), 0 0 24px var(--glow), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.gallery-text {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin: 3px 0 10px;
+}
+
+.gallery-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #14202c;
+  font-weight: 600;
+  font-size: 12.5px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px var(--glow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px var(--glow);
+}
+
 @keyframes beat {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.2); }
