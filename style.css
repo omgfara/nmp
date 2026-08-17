@@ -136,10 +136,10 @@ body {
 }
 
 @media (hover: hover) {
-  .timer-card, .location-card, .map-card, .hug-card {
+  .timer-card, .location-card, .map-card, .hug-card, .gallery-card {
     transition: background 0.4s ease, border 0.4s ease, transform 0.25s ease;
   }
-  .timer-card:hover, .location-card:hover, .map-card:hover, .hug-card:hover {
+  .timer-card:hover, .location-card:hover, .map-card:hover, .hug-card:hover, .gallery-card:hover {
     transform: translateY(-2px);
   }
 }
@@ -340,6 +340,42 @@ body {
   margin-top: 3px;
 }
 
+.gallery-card {
+  width: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 12px 14px;
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow);
+}
+
+.gallery-text {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin: 3px 0 10px;
+}
+
+.gallery-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #1a1410;
+  font-weight: 600;
+  font-size: 12.5px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.3);
+}
+
 /* Konfeti / padajuća srca */
 .confetti-container {
   position: fixed;
@@ -384,43 +420,6 @@ body {
   animation: beat 1.4s ease-in-out infinite;
 }
 
-.gallery-card {
-  width: 100%;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 14px;
-  padding: 12px 14px;
-  backdrop-filter: blur(22px) saturate(150%);
-  -webkit-backdrop-filter: blur(22px) saturate(150%);
-  box-shadow: var(--shadow), 0 0 24px var(--glow), inset 0 1px 0 rgba(255,255,255,0.06);
-}
-
-.gallery-text {
-  font-size: 11px;
-  color: var(--text-secondary);
-  margin: 3px 0 10px;
-}
-
-.gallery-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 9px 18px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  color: #14202c;
-  font-weight: 600;
-  font-size: 12.5px;
-  text-decoration: none;
-  box-shadow: 0 6px 18px var(--glow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.gallery-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px var(--glow);
-}
-
 @keyframes beat {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.2); }
@@ -454,5 +453,6 @@ body {
   .location-card { grid-column: 1 / 2; }
   .hug-card { grid-column: 2 / 3; }
   .map-card { grid-column: 1 / -1; max-width: 460px; margin: 0 auto; }
+  .gallery-card { grid-column: 1 / -1; }
   .dedication { grid-column: 1 / -1; }
 }
